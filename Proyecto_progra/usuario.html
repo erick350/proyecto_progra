@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Hotelero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="text-center">Usuario</h1>
+
+    <div class="text-end mb-3">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Agregar Registro</button>
+      <button class="btn btn-primary" style="background-color: darkred;"><a href="index.html" style="color:white;">Inicio</a></button>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Empleado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>
+            <button class="btn btn-warning btn-sm editBtn" data-bs-toggle="modal" data-bs-target="#editModal">Editar</button>
+            <button class="btn btn-danger btn-sm deleteBtn" data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalLabel">Agregar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="addUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="addUsername">
+            </div>
+            <div class="mb-3">
+                <label for="addPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="addPassword">
+            </div>
+            <div class="mb-3">
+                <label for="addEmpleado" class="form-label">Empleado</label>
+                <select id="addEmpleado " class="form-control"></select>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="editNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="editNombre">
+            </div>
+            <div class="mb-3">
+                <label for="editApellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="editApellido">
+            </div>
+            <div class="mb-3">
+                <label for="editPuesto" class="form-label">Puesto</label>
+                <input type="text" class="form-control" id="editPuesto">
+            </div>
+            <div class="mb-3">
+                <label for="editTelefono" class="form-label">Telefono</label>
+                <input type="text" maxlength="8" class="form-control" id="editTelefono">
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Eliminar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que deseas eliminar el siguiente registro?</p>
+          <form>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.editBtn').forEach(button => {
+      button.addEventListener('click', function() {
+        const row = this.closest('tr');
+        const nombre = row.cells[1].innerText;
+        const apellido = row.cells[2].innerText;
+        const puesto = row.cells[3].innerText;
+        const telefono = row.cells[4].innerText;
+
+        document.getElementById('editNombre').value = nombre;
+        document.getElementById('editApellido').value = apellido;
+        document.getElementById('editPuesto').value = puesto;
+        document.getElementById('editTelefono').value = telefono;
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
