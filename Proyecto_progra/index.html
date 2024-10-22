@@ -1,37 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Hotelería</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de hotelería</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Hotel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="usuario.html">Usuarios</a></li>
-          <li class="nav-item"><a class="nav-link" href="hotel.html">Hotel</a></li>
-          <li class="nav-item"><a class="nav-link" href="tipo_habitacion.html">Tipo de Habitación</a></li>
-          <li class="nav-item"><a class="nav-link" href="habitacion.html">Habitación</a></li>
-          <li class="nav-item"><a class="nav-link" href="cliente.html">Clientes</a></li>
-          <li class="nav-item"><a class="nav-link" href="empleado.html">Empleados</a></li>
-          <li class="nav-item"><a class="nav-link" href="reservacion.html">Reservación</a></li>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Sistema de hotelería</div>
+        <ul class="nav-links">
+            <li><a href="usuario.html">Usuarios</a></li>
+            <li><a href="hotel.html">Hotel</a></li>
+            <li><a href="tipo_habitacion.html">Tipo de Habitación</a></li>
+            <li><a href="habitacion.html">Habitación</a></li>
+            <li><a href="cliente.html">Clientes</a></li>
+            <li><a href="empleado.html">Empleados</a></li>
+            <li><a href="reservacion.html">Reservación</a></li>
         </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="container mt-4">
-    <h1>Bienvenido al Sistema de Hotelería</h1>
-    <p>Seleccione una opción en el menú para comenzar.</p>
-  </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Encuentra el Hotel Perfecto para tu Estancia</h1>
+            <p>Ofrecemos los mejores hoteles en una variedad de destinos. Reserva ahora y disfruta de tu viaje.</p>
+        </div>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Featured Hotels Section -->
+    <section class="hotels">
+        <h2>Hoteles Recomendados:</h2>
+        <div class="hotel-grid">
+            <div class="hotel-card">
+                <img src="img/hotel1.jpg" alt="Hotel 1">
+                <h3>Hotel Sol y Mar</h3>
+                <p>Desde $100 por noche</p>
+            </div>
+            <div class="hotel-card">
+                <img src="img/hotel2.jpg" alt="Hotel 2">
+                <h3>Hotel Gran Vista</h3>
+                <p>Desde $150 por noche</p>
+            </div>
+            <div class="hotel-card">
+                <img src="img/hotel3.jpg" alt="Hotel 3">
+                <h3>Hotel Encanto</h3>
+                <p>Desde $200 por noche</p>
+            </div>
+            <div class="hotel-card">
+                <img src="img/hotel4.jpg" alt="Hotel 4">
+                <h3>Hotel Paraíso</h3>
+                <p>Desde $180 por noche</p>
+            </div>
+            <div class="hotel-card">
+                <img src="img/hotel5.jpg" alt="Hotel 5">
+                <h3>Hotel Playa Blanca</h3>
+                <p>Desde $250 por noche</p>
+            </div>
+            <div class="hotel-card">
+                <img src="img/hotel6.jpg" alt="Hotel 6">
+                <h3>Hotel Costa Azul</h3>
+                <p>Desde $220 por noche</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

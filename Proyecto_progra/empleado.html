@@ -5,14 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema Hotelero</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Sistema de hotelería</a></div>
+    <ul class="nav-links">
+        <li><a href="usuario.html">Usuarios</a></li>
+        <li><a href="hotel.html">Hotel</a></li>
+        <li><a href="tipo_habitacion.html">Tipo de Habitación</a></li>
+        <li><a href="habitacion.html">Habitación</a></li>
+        <li><a href="cliente.html">Clientes</a></li>
+        <li><a href="empleado.html">Empleados</a></li>
+        <li><a href="reservacion.html">Reservación</a></li>
+    </ul>
+  </nav>
   <div class="container mt-4">
     <h1 class="text-center">Empleados</h1>
 
     <div class="text-end mb-3">
       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Agregar Registro</button>
-      <button class="btn btn-primary" style="background-color: darkred;"><a href="index.html" style="color:white;">Inicio</a></button>
     </div>
 
     <table class="table table-bordered">
