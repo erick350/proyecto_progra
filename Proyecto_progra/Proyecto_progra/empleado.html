@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Hotelero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Sistema de hotelería</a></div>
+    <ul class="nav-links">
+        <li><a href="usuario.html">Usuarios</a></li>
+        <li><a href="hotel.html">Hotel</a></li>
+        <li><a href="tipo_habitacion.html">Tipo de Habitación</a></li>
+        <li><a href="habitacion.html">Habitación</a></li>
+        <li><a href="cliente.html">Clientes</a></li>
+        <li><a href="empleado.html">Empleados</a></li>
+        <li><a href="reservacion.html">Reservación</a></li>
+        <li><a href="detalle_reservacion.html">Detalles de Reservación</a></li>
+    </ul>
+  </nav>
+  <div class="container mt-4">
+    <h1 class="text-center">Empleados</h1>
+
+    <div class="text-end mb-3">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Agregar Registro</button>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Telefono</th>
+          <th>Cargo</th>
+          <th>Hotel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>
+            <button class="btn btn-warning btn-sm editBtn" data-bs-toggle="modal" data-bs-target="#editModal">Editar</button>
+            <button class="btn btn-danger btn-sm deleteBtn" data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalLabel">Agregar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="addNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="addNombre">
+            </div>
+            <div class="mb-3">
+                <label for="addApellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="addApellido">
+            </div>
+            <div class="mb-3">
+              <label for="addEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="addEmail">
+            </div>
+            <div class="mb-3">
+              <label for="addTelefono" class="form-label">Telefono</label>
+              <input type="number" class="form-control" id="addTelefono">
+            </div>
+            <div class="mb-3">
+              <label for="addCargo" class="form-label">Cargo</label>
+              <input type="text" class="form-control" id="addCargo">
+            </div>
+            <div class="mb-3">
+              <label for="addHotel" class="form-label">Hotel</label><br>
+              <select id="addHotel">
+                <option value="value1">Hotel 1</option>
+                <option value="value2">Hotel 2</option>
+                <option value="value3">Hotel 3</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="editNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="editNombre">
+            </div>
+            <div class="mb-3">
+                <label for="editApellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="editApellido">
+            </div>
+            <div class="mb-3">
+              <label for="editEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="editEmail">
+            </div>
+            <div class="mb-3">
+              <label for="editTelefono" class="form-label">Telefono</label>
+              <input type="number" class="form-control" id="editTelefono">
+            </div>
+            <div class="mb-3">
+              <label for="editCargo" class="form-label">Cargo</label>
+              <input type="text" class="form-control" id="editCargo">
+            </div>
+            <div class="mb-3">
+              <label for="editHotel" class="form-label">Hotel</label><br>
+              <select id="editHotel">
+                <option value="value1">Hotel 1</option>
+                <option value="value2">Hotel 2</option>
+                <option value="value3">Hotel 3</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Eliminar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que deseas eliminar el siguiente registro?</p>
+          <form>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.editBtn').forEach(button => {
+      button.addEventListener('click', function() {
+        const row = this.closest('tr');
+        const nombre = row.cells[1].innerText;
+        const apellido = row.cells[2].innerText;
+        const email = row.cells[3].innerText;
+        const telefono = row.cells[4].innerText;
+        const cargo = row.cells[5].innerText;
+        const hotel = row.cells[6].innerText;
+
+        document.getElementById('editNombre').value = nombre;
+        document.getElementById('editApellido').value = apellido;
+        document.getElementById('editEmail').value = email;
+        document.getElementById('editTelefono').value = telefono;
+        document.getElementById('editCargo').value = cargo;
+        document.getElementById('editHotel').value = hotel;
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

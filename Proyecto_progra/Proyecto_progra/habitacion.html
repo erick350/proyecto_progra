@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Hotelero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>  
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Sistema de hotelería</a></div>
+    <ul class="nav-links">
+        <li><a href="usuario.html">Usuarios</a></li>
+        <li><a href="hotel.html">Hotel</a></li>
+        <li><a href="tipo_habitacion.html">Tipo de Habitación</a></li>
+        <li><a href="habitacion.html">Habitación</a></li>
+        <li><a href="cliente.html">Clientes</a></li>
+        <li><a href="empleado.html">Empleados</a></li>
+        <li><a href="reservacion.html">Reservación</a></li>
+        <li><a href="detalle_reservacion.html">Detalles de Reservación</a></li>
+    </ul>
+  </nav>
+  <div class="container mt-4">
+    <h1 class="text-center">Habitación</h1>
+
+    <div class="text-end mb-3">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Agregar Registro</button>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID Habitación</th>
+          <th>Número</th>
+          <th>Estado (Disponible)</th>
+          <th>Tipo de habitación</th>
+          <th>Hotel</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>101</td>
+          <td>1 (Disponible)</td>
+          <td>Suite</td>
+          <td>Hotel Central</td>
+          <td>
+            <button class="btn btn-warning btn-sm editBtn" data-bs-toggle="modal" data-bs-target="#editModal">Editar</button>
+            <button class="btn btn-danger btn-sm deleteBtn" data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalLabel">Agregar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="addNumero" class="form-label">Número de Habitación</label>
+              <input type="text" class="form-control" id="addNumero">
+            </div>
+            <div class="mb-3">
+              <label for="addEstado" class="form-label">Estado (Disponible)</label>
+              <select id="addEstado" class="form-control">
+                <option value="1">Disponible</option>
+                <option value="0">No Disponible</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="addTipo" class="form-label">Tipo de habitación</label>
+              <select id="addTipo" class="form-control"></select>
+            </div>
+            <div class="mb-3">
+              <label for="addHotel" class="form-label">Hotel</label>
+              <select id="addHotel" class="form-control"></select>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="editNumero" class="form-label">Número de Habitación</label>
+              <input type="text" class="form-control" id="editNumero">
+            </div>
+            <div class="mb-3">
+              <label for="editEstado" class="form-label">Estado (Disponible)</label>
+              <select id="editEstado" class="form-control">
+                <option value="1">Disponible</option>
+                <option value="0">No Disponible</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="editTipo" class="form-label">Tipo de habitación</label>
+              <select id="editTipo" class="form-control"></select>
+            </div>
+            <div class="mb-3">
+              <label for="editHotel" class="form-label">Hotel</label>
+              <select id="editHotel" class="form-control"></select>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para eliminar registro -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Eliminar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que deseas eliminar el siguiente registro?</p>
+          <form>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para cargar datos desde el JSON y llenar los comboboxes
+    async function loadComboBoxData() {
+      const response = await fetch('data.json');
+      const data = await response.json();
+
+      const tipoSelectAdd = document.getElementById('addTipo');
+      const tipoSelectEdit = document.getElementById('editTipo');
+      const hotelSelectAdd = document.getElementById('addHotel');
+      const hotelSelectEdit = document.getElementById('editHotel');
+
+      // Limpiar los comboboxes
+      tipoSelectAdd.innerHTML = '';
+      tipoSelectEdit.innerHTML = '';
+      hotelSelectAdd.innerHTML = '';
+      hotelSelectEdit.innerHTML = '';
+
+      // Llenar los comboboxes de tipo de habitación
+      data.tiposHabitacion.forEach(tipo => {
+        const optionAdd = new Option(tipo, tipo);
+        const optionEdit = new Option(tipo, tipo);
+        tipoSelectAdd.add(optionAdd);
+        tipoSelectEdit.add(optionEdit);
+      });
+
+      // Llenar los comboboxes de hotel
+      data.hoteles.forEach(hotel => {
+        const optionAdd = new Option(hotel, hotel);
+        const optionEdit = new Option(hotel, hotel);
+        hotelSelectAdd.add(optionAdd);
+        hotelSelectEdit.add(optionEdit);
+      });
+    }
+
+    // Llamar a la función al cargar la página
+    document.addEventListener('DOMContentLoaded', loadComboBoxData);
+
+    // Función para cargar datos en el modal de edición
+    document.querySelectorAll('.editBtn').forEach(button => {
+      button.addEventListener('click', function() {
+        const row = this.closest('tr');
+        const numero = row.cells[1].innerText;
+        const estado = row.cells[2].innerText === "1 (Disponible)" ? "1" : "0";
+        const tipo = row.cells[3].innerText;
+        const hotel = row.cells[4].innerText;
+
+        document.getElementById('editNumero').value = numero;
+        document.getElementById('editEstado').value = estado;
+        document.getElementById('editTipo').value = tipo;
+        document.getElementById('editHotel').value = hotel;
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

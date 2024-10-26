@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Hotelero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Sistema de hotelería</a></div>
+    <ul class="nav-links">
+        <li><a href="usuario.html">Usuarios</a></li>
+        <li><a href="hotel.html">Hotel</a></li>
+        <li><a href="tipo_habitacion.html">Tipo de Habitación</a></li>
+        <li><a href="habitacion.html">Habitación</a></li>
+        <li><a href="cliente.html">Clientes</a></li>
+        <li><a href="empleado.html">Empleados</a></li>
+        <li><a href="reservacion.html">Reservación</a></li>
+        <li><a href="detalle_reservacion.html">Detalles de Reservación</a></li>
+    </ul>
+  </nav>
+  <div class="container mt-4">
+    <h1 class="text-center">Reservación</h1>
+
+    <div class="text-end mb-3">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Agregar Registro</button>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Empleado</th>
+          <th>Hotel</th>
+          <th>Fecha de reservacion</th>
+          <th>Costo Total</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>
+            <button class="btn btn-warning btn-sm editBtn" data-bs-toggle="modal" data-bs-target="#editModal">Editar</button>
+            <button class="btn btn-danger btn-sm deleteBtn" data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalLabel">Agregar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="addCliente" class="form-label">Cliente</label><br>
+              <select id="addCliente">
+                <option value="value1">Cliente 1</option>
+                <option value="value2">Cliente 2</option>
+                <option value="value3">Cliente 3</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="addEmpleado" class="form-label">Empleado</label><br>
+              <select id="addEmpleado">
+                <option value="value1">Empleado 1</option>
+                <option value="value2">Empleado 2</option>
+                <option value="value3">Empleado 3</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="addHotel" class="form-label">Hotel</label><br>
+              <select id="addHotel">
+                <option value="value1">Hotel 1</option>
+                <option value="value2">Hotel 2</option>
+                <option value="value3">Hotel 3</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="addFecha_reservacion" class="form-label">Fecha de reservacion</label>
+              <input type="date" class="form-control" id="addFecha_reservacion">
+            </div>
+            <div class="mb-3">
+              <label for="addCostoTotal" class="form-label">Costo Total</label>
+              <input type="number" class="form-control" id="addCostoTotal">
+            </div>
+            <div class="mb-3">
+              <label for="addEstado" class="form-label">Estado</label>
+              <input type="text" class="form-control" id="addEstado">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="editCliente" class="form-label">Cliente</label><br>
+              <select id="editCliente">
+                <option value="value1">Cliente 1</option>
+                <option value="value2">Cliente 2</option>
+                <option value="value3">Cliente 3</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="editEmpleado" class="form-label">Empleado</label><br>
+              <select id="editEmpleado">
+                <option value="value1">Empleado 1</option>
+                <option value="value2">Empleado 2</option>
+                <option value="value3">Empleado 3</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="editHotel" class="form-label">Hotel</label><br>
+              <select id="editHotel">
+                <option value="value1">Hotel 1</option>
+                <option value="value2">Hotel 2</option>
+                <option value="value3">Hotel 3</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="editFecha_reservacion" class="form-label">Fecha de reservacion</label>
+              <input type="date" class="form-control" id="editFecha_reservacion">
+            </div>
+            <div class="mb-3">
+              <label for="editCostoTotal" class="form-label">Costo Total</label>
+              <input type="number" class="form-control" id="editCostoTotal">
+            </div>
+            <div class="mb-3">
+              <label for="editEstado" class="form-label">Estado</label>
+              <input type="text" class="form-control" id="editEstado">
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Eliminar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que deseas eliminar el siguiente registro?</p>
+          <form>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.editBtn').forEach(button => {
+      button.addEventListener('click', function() {
+        const row = this.closest('tr');
+        const cliente = row.cells[1].innerText;
+        const empleado = row.cells[2].innerText;
+        const hotel = row.cells[3].innerText;
+        const fecha = row.cells[4].innerText;
+        const costo = row.cells[5].innerText;
+        const estado = row.cells[6].innerText;
+
+        document.getElementById('editCliente').value = cliente;
+        document.getElementById('editEmpleado').value = empleado;
+        document.getElementById('editHotel').value = hotel;
+        document.getElementById('editFecha_reservacion').value = fecha;
+        document.getElementById('editCostoTotal').value = costo;
+        document.getElementById('editEstado').value = estado;
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
